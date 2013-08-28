@@ -2,6 +2,7 @@ Palipainting::Application.routes.draw do
   root to: 'welcome#index'
   get 'index' => 'welcome#index'
   get 'about' => 'welcome#about'
+  get 'projects' => 'welcome#projects'
   get 'contact' => 'welcome#contact'
 
   post 'send_contact' => 'welcome#send_contact'

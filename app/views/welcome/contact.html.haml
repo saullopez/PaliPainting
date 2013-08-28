@@ -1,9 +1,0 @@
-.class_one#div_one 
-  = form_tag controller: 'welcome', action: 'send_contact', method: 'post' do |builder|
-    = label_tag :name, 'Name'
-    = text_field_tag :name
-    = label_tag :email, 'Email'
-    = text_field_tag :email
-    = label_tag :message, 'Your message'
-    = text_area_tag :message 
-    = submit_tag "Send", class: 'button'

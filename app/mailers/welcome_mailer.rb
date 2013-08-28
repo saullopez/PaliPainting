@@ -1,5 +1,5 @@
 class WelcomeMailer < ActionMailer::Base
-  default from: "enquiry@example.com"
+  default from: "enquiry@palipainting.com"
   def enquiry(name, email, message)
     @name = name
     @email = email

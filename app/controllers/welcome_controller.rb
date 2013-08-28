@@ -1,20 +1,29 @@
 class WelcomeController < ApplicationController
 
 	def index
+    @current_page = :index
 
 	end
 
-	def about_me
+	def about
+    @current_page = :about
 
 	end
+
+  def projects
+    @current_page = :projects
+  
+  end
 
   def contact
+    @current_page = :contact
 
   end
 
   def send_contact
     WelcomeMailer.enquiry(params[:name], params[:email], params[:message]).deliver
-    redirect_to index_path
+    redirect_to contact_path
   end
 
 end
+

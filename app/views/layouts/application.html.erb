@@ -11,38 +11,43 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-               <div class="fluf navbar-fixed-top"><p>&nbsp;</p></div>
-                <div class="navbar navbar-fixed-top">
-                    <div class="navbar-inner">
-                        <div class="container-fluid">
-                             <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
-    <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <div class="fluf navbar-fixed-top"><p>&nbsp;</p></div>
+              <div class="navbar navbar-fixed-top">
+                  <div class="navbar-inner">
+                      <div class="container-fluid">
+                       <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+    <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse" style="margin-right:7px;">
     <span class="icon-bar"></span>
     <span class="icon-bar"></span>
     <span class="icon-bar"></span>
     </a>
-<a class="brand" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Pali Painting&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+<a class="brand" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Pali Painting&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
                             <!-- Everything you want hidden at 940px or less, place within here -->
           <div class="nav-collapse collapse">
                                 <!-- .nav, .navbar-search, .navbar-form, etc -->
-                            <ul class="nav">
-                                <li class="divider-vertical"></li>
-                                <li><a href="http://web.mit.edu/user/s/a/saulopez/www/index.html">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Home&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+  <ul class="nav">
+      <li class="divider-vertical"></li>
 
-                                </li>
-                                <li class="active"><a href="http://web.mit.edu/user/s/a/saulopez/www/about.html">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;About&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
-                                <li><a href="http://web.mit.edu/user/s/a/saulopez/www/projects.html">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Projects&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+      <li class=<%= 'active' if @current_page == :index %>><a <%= @current_page == :index ? href='#' : href= "href = #{index_path}" %>> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Home&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+      </li>
 
-                                <li><a href="#">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Contact&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+      <li class=<%= 'active' if @current_page == :about %>><a <%= @current_page == :about ? href="#" : href= "href = #{about_path}" %>>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;About&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+      </li>
 
-                                </li>
-                                <li class="divider-vertical"></li>
-                            </ul>
+      <li class=<%= 'active' if @current_page == :projects %>><a <%= @current_page == :projects ? href='#' : href= "href = #{projects_path}" %>>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Projects&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+      </li>
+
+      <li class=<%= 'active' if @current_page == :contact %>><a <%= @current_page == :contact ? href='#' : href= "href = #{contact_path}" %>>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Contact&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+      </li>
+
+      <li class="divider-vertical"></li>
+  </ul>
                         </div>
                     </div>
                 </div>
             </div>
                 <!-- /.navbar -->
+
 <%= yield %>
 
       <!-- FOOTER -->
