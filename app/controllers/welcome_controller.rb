@@ -21,8 +21,12 @@ class WelcomeController < ApplicationController
   end
 
   def send_contact
-    WelcomeMailer.enquiry(params[:name], params[:email], params[:message]).deliver
+    WelcomeMailer.enquiry(params[:name],
+      params[:email],
+      params[:message]).deliver
+
     redirect_to contact_path
+    flash[:notice] = "Thank you for your message!"
   end
 
 end
